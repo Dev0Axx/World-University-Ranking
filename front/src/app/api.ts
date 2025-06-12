@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export const covidApi = axios.create({
-	baseURL: 'https://disease.sh/v3/covid-19',
+export const api = axios.create({
+	baseURL: 'http://localhost:3001',
 })

@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model university_rankings {
+  name                         String  @unique
+  scores_teaching              Float
+  scores_research              Float
+  scores_citations             Float
+  scores_industry_income       Float
+  scores_international_outlook Float
+  record_type                  String  @db.VarChar(50)
+  member_level                 Int
+  location                     String  @db.VarChar(100)
+  stats_number_students        String  @db.VarChar(20)
+  stats_student_staff_ratio    Float
+  stats_pc_intl_students       String  @db.VarChar(20)
+  stats_female_male_ratio      String  @db.VarChar(20)
+  subjects_offered             String
+  closed                       Boolean
+  unaccredited                 Boolean
+  overall_score                Float
+
+  @@id([name])
+}
