@@ -2,25 +2,25 @@
 'use client'
 import {
 	AppBar,
-	Toolbar,
-	Typography,
-	Button,
-	IconButton,
-	useTheme,
 	Box,
+	Button,
+	Divider,
+	IconButton,
 	List,
 	ListItem,
 	ListItemButton,
 	ListItemText,
-	Divider,
+	Toolbar,
+	Typography,
+	useTheme,
 } from '@mui/material'
-import { Brightness4, Brightness7 } from '@mui/icons-material'
-import { useRouter } from 'next/navigation'
-import { useThemeContext } from '../providers/ThemeContext'
-import { useState } from 'react'
+import {Brightness4, Brightness7} from '@mui/icons-material'
+import {useRouter} from 'next/navigation'
+import {useThemeContext} from '../providers/ThemeContext'
+import {useState} from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import Drawer from '@mui/material/Drawer'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 
 export default function AppHeader() {
 	const { toggleTheme } = useThemeContext()
@@ -97,7 +97,7 @@ export default function AppHeader() {
 					</Typography>
 
 					{/* Desktop navigation */}
-					<Box sx={{ display: { xs: 'none', xl: 'flex' }, gap: 1 }}>
+					<Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
 						{navItems.map((item, index) => (
 							<motion.div
 								key={item.path}
